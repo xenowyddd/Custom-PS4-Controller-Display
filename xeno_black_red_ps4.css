@@ -1,0 +1,46 @@
+/* XENO - Black & Red DualShock 4 theme for Gamepad Viewer
+   Load this with the editcss= parameter on the built-in PS4 skin. */
+
+html,
+body {
+    background: transparent !important;
+}
+
+/* Keep the original DualShock 4 shape and give it a dark red/black finish. */
+.controller.ds4 {
+    filter: grayscale(1) sepia(1) saturate(5) hue-rotate(315deg)
+            brightness(0.62) contrast(1.12);
+}
+
+/* Add the XENO name to the touchpad, without adding glow effects. */
+.ds4 .touchpad {
+    position: absolute;
+}
+
+.ds4 .touchpad::after {
+    content: "xeno";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 48%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: lowercase;
+    color: #d71920;
+    text-shadow: none;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Keep the pressed-state colors restrained and avoid glow. */
+.ds4 .button,
+.ds4 .face,
+.ds4 .bumper,
+.ds4 .trigger,
+.ds4 .stick {
+    box-shadow: none !important;
+}
